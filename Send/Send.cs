@@ -49,7 +49,7 @@ namespace Send
                     var body = Encoding.UTF8.GetBytes(message);
 
                     channel.BasicPublish(exchange: "",
-                                         routingKey: ConfigurationManager.RoutineQueue,
+                                         routingKey: ConfigurationManager.QueueName,
                                          basicProperties: null,
                                          body: body);
                 }
