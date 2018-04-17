@@ -1,38 +1,62 @@
-﻿using RabbitMQ.Client;
+﻿using Middleware.Log.Sender.Config;
+using RabbitMQ.Client;
 using System;
+using System.IO;
+using System.Reflection;
 using System.Text;
+using System.Xml;
 
 namespace Send
 {
-    class Program
+    static class Log
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Digite a mensagem e tecle enter:");
+        private static readonly log4net.ILog log;
 
-            SendMassage(Console.ReadLine());
-            Console.WriteLine("Enviado");
-            Console.ReadLine();
+        public static void Error(Exception Exception)
+        {
+            Error(Exception.ToString());
         }
-
-        private static void SendMassage(string message)
+        public static void Error(string Message)
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
+            if (log == null)
             {
-                channel.QueueDeclare(queue: "hello",
-                                     durable: false,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
+                XmlDocument log4netConfig = new XmlDocument();
+                log4netConfig.Load(File.OpenRead(Path.Combine(Environment.CurrentDirectory, "log4net.config")));
+                var repo = log4net.LogManager.CreateRepository(Assembly.GetEntryAssembly(), typeof(log4net.Repository.Hierarchy.Hierarchy));
+                log4net.Config.XmlConfigurator.Configure(repo, log4netConfig["log4net"]);
+                log4net.LogManager.GetLogger(typeof(Log));
+            }
 
-                var body = Encoding.UTF8.GetBytes(message);
+            log.Error(Message);
+        }
+    }
+    class Send
+    {
+        public void SendMassage(string message)
+        {
+            try
+            {
+                var factory = new ConnectionFactory() { HostName = ConfigurationManager.QueueHost };
+                using (var connection = factory.CreateConnection())
+                using (var channel = connection.CreateModel())
+                {
+                    channel.QueueDeclare(queue: ConfigurationManager.QueueName,
+                                         durable: false,
+                                         exclusive: false,
+                                         autoDelete: false,
+                                         arguments: null);
 
-                channel.BasicPublish(exchange: "",
-                                     routingKey: "hello",
-                                     basicProperties: null,
-                                     body: body);
+                    var body = Encoding.UTF8.GetBytes(message);
+
+                    channel.BasicPublish(exchange: "",
+                                         routingKey: ConfigurationManager.RoutineQueue,
+                                         basicProperties: null,
+                                         body: body);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex);
             }
         }
     }

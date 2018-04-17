@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receive", "Receive\Receive.csproj", "{BDAA3B65-6A3D-48A9-9D87-514F840150D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middleware.Log.Receive", "Receive\Middleware.Log.Receive.csproj", "{BDAA3B65-6A3D-48A9-9D87-514F840150D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Send", "Send\Send.csproj", "{7211665D-D886-4041-A5E6-57DD44B5A8DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middleware.Log.Sender", "Send\Middleware.Log.Sender.csproj", "{7211665D-D886-4041-A5E6-57DD44B5A8DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{3B3983AF-AF9C-4C36-AE70-0175BE65E3E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7211665D-D886-4041-A5E6-57DD44B5A8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7211665D-D886-4041-A5E6-57DD44B5A8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7211665D-D886-4041-A5E6-57DD44B5A8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B3983AF-AF9C-4C36-AE70-0175BE65E3E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3983AF-AF9C-4C36-AE70-0175BE65E3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3983AF-AF9C-4C36-AE70-0175BE65E3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3983AF-AF9C-4C36-AE70-0175BE65E3E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
