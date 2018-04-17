@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middleware.Log.Receive", "R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middleware.Log.Sender", "Send\Middleware.Log.Sender.csproj", "{7211665D-D886-4041-A5E6-57DD44B5A8DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{3B3983AF-AF9C-4C36-AE70-0175BE65E3E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication.Moc", "WebApplication1\WebApplication.Moc.csproj", "{3B3983AF-AF9C-4C36-AE70-0175BE65E3E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
