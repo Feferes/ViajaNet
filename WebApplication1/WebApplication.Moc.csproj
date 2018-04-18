@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Middleware.Repository\Middleware.Repository.csproj" />
     <ProjectReference Include="..\Send\Middleware.Log.Sender.csproj" />
   </ItemGroup>
 

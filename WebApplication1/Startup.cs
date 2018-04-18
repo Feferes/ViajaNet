@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Middleware.Log.Sender;
 using Middleware.Log.Sender.Interface;
+using Middleware.Repository.Context;
 using WebApplication1.Helper;
 
 namespace WebApplication1
@@ -26,6 +28,7 @@ namespace WebApplication1
             {
                 options.Filters.Add<CustomActionFilter>();
             });
+            services.AddDbContext<LogContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LogDatabase")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

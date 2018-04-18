@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middleware.Log.Sender", "Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication.Moc", "WebApplication1\WebApplication.Moc.csproj", "{3B3983AF-AF9C-4C36-AE70-0175BE65E3E7}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middleware.Repository", "Middleware.Repository\Middleware.Repository.csproj", "{FED09D13-FA8C-4777-8F6A-2CBE457E33B6}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Middleware.Database", "Middleware.Database\Middleware.Database.sqlproj", "{E956F686-3049-4E67-B99C-C79D278DADEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,16 @@ Global
 		{3B3983AF-AF9C-4C36-AE70-0175BE65E3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B3983AF-AF9C-4C36-AE70-0175BE65E3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B3983AF-AF9C-4C36-AE70-0175BE65E3E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED09D13-FA8C-4777-8F6A-2CBE457E33B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED09D13-FA8C-4777-8F6A-2CBE457E33B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED09D13-FA8C-4777-8F6A-2CBE457E33B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED09D13-FA8C-4777-8F6A-2CBE457E33B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E956F686-3049-4E67-B99C-C79D278DADEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E956F686-3049-4E67-B99C-C79D278DADEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E956F686-3049-4E67-B99C-C79D278DADEB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E956F686-3049-4E67-B99C-C79D278DADEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E956F686-3049-4E67-B99C-C79D278DADEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E956F686-3049-4E67-B99C-C79D278DADEB}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
